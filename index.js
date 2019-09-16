@@ -4,7 +4,7 @@ const app = express();
 
 const proxy = new Proxy([], {
   set(target, item, value) {
-    if (isNaN(value)) {
+    if (isNaN(value) && !!value) {
       console.log(`${value.user.firstName} ${value.user.lastName}:`, value.message);
     }
     return true;
