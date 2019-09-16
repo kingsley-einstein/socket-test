@@ -11,7 +11,7 @@ const proxy = new Proxy([], {
   }
 });
 
-const io = socketIOClient.connect('http://localhost:3000');
+const io = socketIOClient.connect('http://localhost:5500');
 
 io.on('ALL_MESSAGES_RECEIVED', (data) => {
   if (data.length > 0) {
